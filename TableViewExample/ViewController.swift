@@ -39,7 +39,13 @@ class ViewController: UIViewController {
     
     func loadData() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        
+        // Bind cells
+        self.tableView.register(DetailCell.self, forCellReuseIdentifier: "DetailCell")
+        self.tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 
 }
@@ -54,10 +60,29 @@ extension ViewController: UITableViewDataSource {
         return self.items.count
     }
     // Binds each item
+    // Custom cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         let item = self.items[indexPath.item]
-        cell.textLabel?.text = item
+        cell.titleLabel.text = item
+        cell.coverView.image = UIImage(named: "Swift")
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 128
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let item = self.items[indexPath.item]
+
+        let alertController = UIAlertController(title: item, message: "is in da house!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { _ in }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

@@ -13,6 +13,9 @@
 		F865D31D250BE1A1007D76DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F865D31B250BE1A1007D76DE /* Main.storyboard */; };
 		F865D31F250BE1A4007D76DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F865D31E250BE1A4007D76DE /* Assets.xcassets */; };
 		F865D322250BE1A4007D76DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F865D320250BE1A4007D76DE /* LaunchScreen.storyboard */; };
+		F865D32A250BE90B007D76DE /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865D329250BE90B007D76DE /* MyCell.swift */; };
+		F865D32C250BEAD7007D76DE /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865D32B250BEAD7007D76DE /* DetailCell.swift */; };
+		F865D32E250BEBBB007D76DE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865D32D250BEBBB007D76DE /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		F865D31E250BE1A4007D76DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F865D321250BE1A4007D76DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F865D323250BE1A4007D76DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F865D329250BE90B007D76DE /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		F865D32B250BEAD7007D76DE /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		F865D32D250BEBBB007D76DE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				F865D31E250BE1A4007D76DE /* Assets.xcassets */,
 				F865D320250BE1A4007D76DE /* LaunchScreen.storyboard */,
 				F865D323250BE1A4007D76DE /* Info.plist */,
+				F865D329250BE90B007D76DE /* MyCell.swift */,
+				F865D32B250BEAD7007D76DE /* DetailCell.swift */,
+				F865D32D250BEBBB007D76DE /* CustomCell.swift */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F865D32C250BEAD7007D76DE /* DetailCell.swift in Sources */,
 				F865D31A250BE1A1007D76DE /* ViewController.swift in Sources */,
+				F865D32A250BE90B007D76DE /* MyCell.swift in Sources */,
 				F865D316250BE1A1007D76DE /* AppDelegate.swift in Sources */,
+				F865D32E250BEBBB007D76DE /* CustomCell.swift in Sources */,
 				F865D318250BE1A1007D76DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
