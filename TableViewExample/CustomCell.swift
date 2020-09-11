@@ -55,4 +55,12 @@ class CustomCell: UITableViewCell {
 
         self.coverView.image = nil
     }
+//    Cells are highlighed when you are holding them down with your finger. Cell is going to be selected if you release your finger from the cell.
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        self.coverView.backgroundColor = selected ? .red : .clear
+    }
+
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        self.coverView.backgroundColor = highlighted ? .blue : .clear
+    }
 }
