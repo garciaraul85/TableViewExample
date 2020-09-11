@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         // Bind cells
         self.tableView.register(DetailCell.self, forCellReuseIdentifier: "DetailCell")
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        self.tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderView")
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -141,5 +142,15 @@ extension ViewController: UITableViewDelegate {
         let action = UIAlertAction(title: "Ok", style: .default) { _ in }
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
+        view.titleLabel.text = self.key(for: section)
+        return view
     }
 }
