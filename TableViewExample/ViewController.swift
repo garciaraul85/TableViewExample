@@ -127,6 +127,14 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.key(for: section)
     }
+//    If you are going to implement these methods above you can have a little index view for your sections in the right side of the table view, so the end-user will be able to quickly jump between sections.
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return ["1", "2", "3"]
+    }
+
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
 }
 
 extension ViewController: UITableViewDelegate {
